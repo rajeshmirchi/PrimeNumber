@@ -22,14 +22,7 @@ public class PrimesServiceImpl implements IPrimesService {
 	@Autowired
 	private PrimesBO primesBO;
 
-	public void setPrimesBO(PrimesBO primesBO) {
-		this.primesBO = primesBO;
-	}
-    
-	/**
-	 *
-	 */
-	/**
+   	/**
 	 * This Method is used to implement the functionality to find Prime Numbers
 	 *
 	 */
