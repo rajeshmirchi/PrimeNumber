@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.annotation.ManagedBean;
 
+import org.springframework.stereotype.Component;
+
 
 /**
  * This Class is used to hold the value of the calculated Prime numbers
@@ -11,7 +13,7 @@ import javax.annotation.ManagedBean;
  * @author Rajesh Kurapati
  *
  */
-@ManagedBean
+@Component
 public class PrimesBO {
 	
 	/**
