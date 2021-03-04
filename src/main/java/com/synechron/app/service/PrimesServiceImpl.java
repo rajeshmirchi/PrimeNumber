@@ -5,6 +5,7 @@ import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 /**
@@ -27,11 +28,13 @@ public class PrimesServiceImpl implements IPrimesService {
 	 *
 	 */
 	@Override
+	@Cacheable("primesBO")
 	public PrimesBO findPrimes(int initial) {
 		try {
 			primesBO.setInitial(initial);
 
-
+			System.out.println("Calculating Primes");
+			
 			List<Integer> primesList = IntStream.rangeClosed(2, initial).filter(n -> isPrime(n))
 					.boxed().collect(Collectors.toList());
 			
