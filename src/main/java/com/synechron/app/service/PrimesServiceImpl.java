@@ -28,13 +28,10 @@ public class PrimesServiceImpl implements IPrimesService {
 	 *
 	 */
 	@Override
-	@Cacheable("primesBO")
 	public PrimesBO findPrimes(int initial) {
 		try {
 			primesBO.setInitial(initial);
 
-			System.out.println("Calculating Primes");
-			
 			List<Integer> primesList = IntStream.rangeClosed(2, initial).filter(n -> isPrime(n))
 					.boxed().collect(Collectors.toList());
 			
