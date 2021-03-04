@@ -24,7 +24,7 @@ public class PrimesController {
 	 * input parameter : initial
 	 * return type : PrimesBO
 	 */
-	@GetMapping(value = "/primes/{initial}", produces = { MediaType.APPLICATION_JSON_VALUE })
+	@GetMapping(value = "/primes/{initial}", produces = { MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE })
 
 	public PrimesBO getPrimes(@PathVariable(name = "initial") int initial) {
 
