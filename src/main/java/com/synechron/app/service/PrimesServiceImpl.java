@@ -28,6 +28,7 @@ public class PrimesServiceImpl implements IPrimesService {
 	 *
 	 */
 	@Override
+	@Cacheable(value="ten-seconds-cache", key="#initial")
 	public PrimesBO findPrimes(int initial) {
 		try {
 			primesBO.setInitial(initial);
@@ -35,7 +36,6 @@ public class PrimesServiceImpl implements IPrimesService {
 			List<Integer> primesList = IntStream.rangeClosed(2, initial).filter(n -> isPrime(n))
 					.boxed().collect(Collectors.toList());
 			
-
 			primesBO.setPrimesList(primesList);
 		} catch (Exception exc) {
 			exc.printStackTrace();
